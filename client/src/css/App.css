@@ -18,48 +18,43 @@ body {
   padding: 10px;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-  
 }
 
 .wrapper {
-	    margin: 2em auto;
-    max-width: 970px;
+  margin: 2em auto;
+  max-width: 970px;
 }
 
 .App-gallery {
-    margin-left: -10px;
-    display: flex;
-    flex-flow: row wrap;
-  
+  margin-left: -10px;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .App-photo {
-	 
-      overflow: hidden;
+    overflow: hidden;
     border-radius: 5px;
     margin: 0 0 10px 10px;
     background-color: #333;
     color: white;
     position: relative;
-    flex: auto;
     height: 250px;
     min-width: 150px;
-  
+    flex: auto;
 }
 
 .App-photo:nth-child(4n+1){
      width: 250px;
-  }
+}
 .App-photo:nth-child(4n+2){
      width: 325px;
-  }
+}
 .App-photo:nth-child(4n+3){
      width: 180px;
-  }
+}
 .App-photo:nth-child(4n+4){
      width: 380px;
-  }
-
+}
 
 .App-photo-img {
 	object-fit: cover;
