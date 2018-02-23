@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/App.css'; 
+import Photo from './Photo'
 import { getPhotos } from '../actions/photos'
 
 class App extends React.Component {
@@ -31,12 +32,9 @@ class App extends React.Component {
         <div className="App-gallery">
          { this.state.photos.photo && 
 	        this.state.photos.photo.map(photo => 
-		     <div className="App-photo">
-		     	<img className="App-photo-img"
-		     		 src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} />
-		     
-		     </div>   
-	        ) 	 
+	        	<Photo url={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} 
+		        />
+		        	) 	 
 	         
 	     }
         </div>
