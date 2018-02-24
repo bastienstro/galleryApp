@@ -26,12 +26,14 @@ class Photo extends React.Component {
 	
   render() {
 	  
-	const { owner_name,url_t,url_m,url_l,description,date_taken,views } = this.props;  
+	const { ownername,url_t,url_m,url_l,description,date_taken,views } = this.props;  
 	  
     return (
       <div className="App-photo">
-	  	 {<img className={"App-photo-img "+(!this.state.loaded?"App-photo-img--blur":"")}
-		 	   src={this.state.loaded?url_m:url_t} /> }
+	  	 <img className={"App-photo-img "+(!this.state.loaded?"App-photo-img--blur":"")} src={this.state.loaded?url_m:url_t} />
+	  	 <div className="App-photo-description">
+	  	 	<h2 className="App-photo-username">{ownername}	</h2>
+	  	 </div>
 	  </div> 
     );
   }
