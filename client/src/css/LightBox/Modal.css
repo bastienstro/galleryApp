@@ -1,0 +1,24 @@
+.Modal-overlay {
+	position: fixed;
+	width: 100%;
+	top:0;
+	height: 100%;
+	z-index: 2;
+	background: #000;
+	-webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    transition-delay: 0.5s;
+}
+
+.Modal-overlay-out {
+	display: none;
+	opacity: 0;	
+	
+}
+
+
+.Modal-overlay-in {
+	display: block;
+	opacity: 1;	
+	
+}

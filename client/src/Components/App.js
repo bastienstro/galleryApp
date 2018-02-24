@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/App.css'; 
 import Photo from './Photo'
+import LightBox from './LightBox/Modal'
+
 import { getPhotos } from '../actions/photos'
 
 class App extends React.Component {
@@ -78,6 +80,7 @@ class App extends React.Component {
 	     }
         </div>
         </div>
+        <LightBox isOpen={true} />
       </div>
     );
   }
