@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
+  color:#000;
 }
 
 .App {
@@ -33,53 +34,54 @@ body {
 }
 
 .App-photo {
-    overflow: hidden;
-    border-radius: 5px;
-    margin: 0 0 10px 10px;
-    background-color: #FFF;
-    color: white;
-    position: relative;
-    height: 250px;
-    min-width: 150px;
-    flex: auto;
-    cursor:pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 0 0 10px 10px;
+  background-color: #FFF;
+  color: white;
+  position: relative;
+  height: 250px;
+  min-width: 150px;
+  flex: auto;
+  cursor:pointer;
 }
 
 .App-photo:nth-child(4n+1){
-     width: 250px;
+  width: 250px;
 }
 .App-photo:nth-child(4n+2){
-     width: 325px;
+  width: 325px;
 }
 .App-photo:nth-child(4n+3){
-     width: 180px;
+  width: 180px;
 }
 .App-photo:nth-child(4n+4){
-     width: 380px;
+  width: 380px;
 }
 
 .App-photo-img {
-	object-fit: cover;
-    width: 100%;
-    height: 100%;
-   	filter:brightness(50%);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter:brightness(50%);
 }
 
 .App-photo-img--blur{
-	filter:brightness(50%) blur(5px);
+  filter:brightness(50%) blur(5px);
 }
 
 .App-photo-description {
-	position: absolute;
-	top:20px;
-	left: 20px;
-	bottom: 20px;
-	right: 20px;	
-	background: rgba(255,255,255,0.6);
-	opacity: 0;
-	color:#000000;
-	transition: opacity 1s ease;
-	 display: flex;
+  position: absolute;
+  top:20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;	
+  background: rgba(255,255,255,0.6);
+  opacity: 0;
+  color:#000000;
+  padding: 10px;
+  transition: opacity 1s ease;
+  display: flex;
   justify-content: center;
   align-items: center; 
   flex-flow: row wrap;
@@ -87,22 +89,26 @@ body {
 }
 
 .App-photo:hover .App-photo-description {
-opacity: 1;	
+  opacity: 1;	
 }
 
 .App-photo-username,.App-photo-caption {
-	
-	width: 100%;
-	margin:0;
-    /* padding: 0 20px; */
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 16px;
-    letter-spacing: 2px;
+  width: 100%;
+  margin:0;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
     
 }
 
 .App-photo-username {
-	color:#444;
-	font-size: 14px;
+  color:#444;
+  font-size: 14px;
+}
+
+.App-photo-caption {
+  color:#000;
+  font-size: 16px;	
 }
