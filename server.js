@@ -16,7 +16,13 @@ Flickr.tokenOnly(flickrOptions, function(error, flickr) {
 		
 		const page = req.params.page || 1;
 
-		flickr.photos.getRecent({ page: page,per_page:10 }, function(err,result) {
+		flickr.photos.getRecent({ page: page,
+								  per_page:10,
+								  extras: "owner_name,url_t,url_o,description,date_taken,views" 
+			
+			
+			
+		}, function(err,result) {
           if(err) { resp.send(err); }
           resp.send(result)  
         });
