@@ -59,15 +59,26 @@ body {
   width: 380px;
 }
 
-.App-photo-img {
+.App-photo-img {position: absolute;
+	top:0;
+	left: 0;
   object-fit: cover;
   width: 100%;
   height: 100%;
   filter:brightness(50%);
+  transition:opacity 1s;
 }
 
 .App-photo-img--blur{
-  filter:brightness(50%) blur(5px);
+  filter: blur(7px) brightness(50%);
+}
+
+.App-photo-img--hide {
+	opacity: 0;
+}
+
+.App-photo-img--show {
+	opacity: 1;
 }
 
 .App-photo-description {
