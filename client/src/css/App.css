@@ -79,16 +79,19 @@ body {
 	opacity: 0;
 	color:#000000;
 	transition: opacity 1s ease;
-	display: block;
-	
+	 display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-flow: row wrap;
+  align-content:center;
 }
 
 .App-photo:hover .App-photo-description {
 opacity: 1;	
 }
 
-.App-photo-username {
-	line-height: 210px;
+.App-photo-username,.App-photo-caption {
+	
 	width: 100%;
 	margin:0;
     /* padding: 0 20px; */
@@ -97,4 +100,9 @@ opacity: 1;
     font-size: 16px;
     letter-spacing: 2px;
     
+}
+
+.App-photo-username {
+	color:#444;
+	font-size: 14px;
 }
