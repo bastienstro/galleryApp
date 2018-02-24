@@ -18,7 +18,7 @@ Flickr.tokenOnly(flickrOptions, function(error, flickr) {
 
 		flickr.photos.getRecent({ page: page,
 								  per_page:10,
-								  extras: "owner_name,url_t,url_m,url_l,description,date_taken,views" 
+								  extras: "owner_name,url_t,url_m,url_c,url_l,description,date_taken,views" 
 			
 			
 			

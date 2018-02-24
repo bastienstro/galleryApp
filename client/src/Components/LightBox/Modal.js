@@ -11,7 +11,7 @@ class Modal extends React.Component {
   componentDidUpdate() {
 	  
 	  if (this.props.isOpen) {
-		  this.overlay.style.display="block"
+		  this.overlay.style.display="flex"
 		  setTimeout(() => {this.overlay.style.opacity=1},500)
 	   }
 	  else {

@@ -35,6 +35,7 @@ class Photo extends React.Component {
 	  	 	<h2 className="App-photo-caption">{title}</h2>
 	  	 	<h2 className="App-photo-username">{ownername}</h2>
 	  	 	
+	  	 	
 	  	 </div>
 	  </div> 
     );
