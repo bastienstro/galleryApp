@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/App.css'; 
 import Photo from './Photo'
-import LightBox from './LightBox/Modal'
+import LightBox from './LightBox/LightBox'
 
 import { getPhotos } from '../actions/photos'
 
@@ -82,7 +82,7 @@ class App extends React.Component {
 	     }
         </div>
         </div>
-        <LightBox isOpen={isLightBoxOpen} onRequestClose={() => this.setState({selectedPhoto: {}})} />
+        <LightBox isOpen={isLightBoxOpen} photo={this.state.selectedPhoto} onRequestClose={() => this.setState({selectedPhoto: {}})} />
       </div>
     );
   }

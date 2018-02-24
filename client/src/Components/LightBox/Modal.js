@@ -22,15 +22,12 @@ class Modal extends React.Component {
 	
   render() {
 	  
-	const { isOpen } = this.props
-	  
+		  
     return (
       <div ref={(overlay) => {this.overlay=overlay}} 
       	   style={{display:'none'}}
       	   className="Modal-overlay" 
-      	   onClick={() => this.props.onRequestClose()}	   
-      >
-      	
+      	   onClick={() => this.props.onRequestClose()} >	
 	  		<div className={"Modal-container"}>
 	  			{this.props.children}
 	  		</div>		 

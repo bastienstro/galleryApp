@@ -1,5 +1,5 @@
 import React from 'react'; 
-import './Modal'
+import Modal from './Modal'
 
 class LightBox extends React.Component {
 	
@@ -13,13 +13,12 @@ class LightBox extends React.Component {
 	
   render() {
 	
-	const { isOpen } = this.props
-	  
-	  
+	const { isOpen,photo } = this.props;    
+	 console.log(photo)
     return (
       <React.Fragment>
       	<Modal isOpen={isOpen} onRequestClose={() => this.props.onRequestClose()} >
-      	
+      		<img src={photo.url_l} />
       	
       	</Modal>
       </React.Fragment> 
