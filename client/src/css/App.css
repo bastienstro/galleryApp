@@ -41,6 +41,7 @@ body {
     height: 250px;
     min-width: 150px;
     flex: auto;
+    cursor:pointer;
 }
 
 .App-photo:nth-child(4n+1){

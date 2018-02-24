@@ -20,17 +20,18 @@ class Photo extends React.Component {
 	    const image = new Image();
 	    image.onload = () => resolve();
 	    image.onerror = err => reject(err);
-	    image.src = this.props.url;
+	    image.src = this.props.url_m;
 	  });
   }	
 	
   render() {
+	  
+	const { owner_name,url_t,url_m,url_l,description,date_taken,views } = this.props;  
+	  
     return (
       <div className="App-photo">
-     
-		 {<img className={"App-photo-img "+(!this.state.loaded?"App-photo-img--blur":"")}
-		 	   src={this.state.loaded?this.props.url:this.props.thumbnail} /> }
-		 
+	  	 {<img className={"App-photo-img "+(!this.state.loaded?"App-photo-img--blur":"")}
+		 	   src={this.state.loaded?url_m:url_t} /> }
 	  </div> 
     );
   }

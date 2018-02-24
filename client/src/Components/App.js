@@ -31,11 +31,7 @@ class App extends React.Component {
         <div className="wrapper">
         <div className="App-gallery">
          { this.state.photos.photo && 
-	        this.state.photos.photo.map(photo => 
-	        	<Photo  thumbnail={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_t.jpg`} 
-		         		url={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} 
-		        />
-		        	) 	 
+	        this.state.photos.photo.map(photo => <Photo  {...photo} />) 	 
 	         
 	     }
         </div>
