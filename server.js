@@ -24,7 +24,7 @@ Flickr.tokenOnly(flickrOptions, function(error, flickr) {
 			
 		}, function(err,result) {
           if(err) { resp.send(err); }
-          resp.send(result)  
+          resp.send(result.photos)  
         });
 		
 	})
