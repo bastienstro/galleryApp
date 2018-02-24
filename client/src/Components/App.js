@@ -13,7 +13,8 @@ class App extends React.Component {
 	  this.state = {
 		  photos : [],
 		  page : 1,
-		  pages : 100
+		  pages : 100,
+		  selectedPhoto : {}
 	  }
   }
   
@@ -26,13 +27,13 @@ class App extends React.Component {
 	 }))
 	  
   }
-  
+    
   componentDidUpdate() {
 	  
 	this.infiniteScroll(50,() => {
 	
 	let nextPage = this.state.page+1;
-	if (nextPage != this.state.pages)
+	if (nextPage !== this.state.pages)
 		getPhotos(nextPage)
 		.then(photos => this.setState({photos : [...this.state.photos,...photos.photo],
 					  				   page : photos.page,
@@ -66,6 +67,7 @@ class App extends React.Component {
   render() {
 	  
 	console.log(this.state.page)  
+	const isLightBoxOpen = this.state.selectedPhoto.hasOwnProperty('id')  
 	  
     return (
       <div className="App">
@@ -75,12 +77,12 @@ class App extends React.Component {
         <div className="wrapper">
         <div className="App-gallery">
          { this.state.photos && 
-	        this.state.photos.map(photo => <Photo  {...photo} />) 	 
+	        this.state.photos.map(photo => <Photo  {...photo} onClick={() => this.setState({selectedPhoto : photo})} />) 	 
 	         
 	     }
         </div>
         </div>
-        <LightBox isOpen={true} />
+        <LightBox isOpen={isLightBoxOpen} onRequestClose={() => this.setState({selectedPhoto: {}})} />
       </div>
     );
   }
