@@ -1,6 +1,6 @@
-export const getPhotos = async (params) => {
+export const getPhotos = async (page = 1) => {
 	
-	let response = await fetch('/photos')
+	let response = await fetch(`/photos/${page}`)
 	let photos = await response.json()
 	
 	return photos
