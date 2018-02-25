@@ -1,0 +1,26 @@
+.Lazy-image {
+	position: relative;
+}
+
+.Lazy-image-item {
+	position: absolute;
+	top:0;
+	left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter:brightness(50%);
+    transition:opacity 1s;
+}
+
+.Lazy-image-item--blur{
+    filter: blur(7px) brightness(50%);
+}
+
+.Lazy-image-item--hide {
+	opacity: 0;
+}
+
+.Lazy-image-item--show {
+	opacity: 1;
+}

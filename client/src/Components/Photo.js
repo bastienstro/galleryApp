@@ -1,28 +1,19 @@
 import React from 'react';
-import '../css/App.css'; 
+import '../css/App.css';
+import LazyImage from './LazyImage/LazyImage'
 
 class Photo extends React.Component {
 	
-  constructor(props) {
-	  super(props)
-	  this.state = {
-		  loaded : false,
-		  error  : false
-	  }
-  }
-
   render() {
 	  
-	const { ownername,url_t,url_m,url_l,title } = this.props;  
+	const { ownername,url_t,url_m,title } = this.props;  
 	  
     return (
       <div className="App-photo" onClick={() => this.props.onClick()} >
-	  	 <img className={"App-photo-img App-photo-img--blur"+(this.state.loaded?" App-photo-img--hide":"")} src={url_t} />
-	  	 <img className={"App-photo-img "+(this.state.loaded?" App-photo-img--show":"App-photo-img--hide")} src={url_m} onLoad={() => this.setState({loaded : true})}/>
+	  	 <LazyImage thumbsrc={url_t} src={url_m} />
 	  	 <div className="App-photo-description">
 	  	 	<h2 className="App-photo-caption">{title}</h2>
 	  	 	<h2 className="App-photo-username">{ownername}</h2>
-	  	 	
 	  	 </div>
 	  </div> 
     );
