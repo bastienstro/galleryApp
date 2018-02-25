@@ -59,6 +59,27 @@ body {
   width: 380px;
 }
 
+.App-photo-img {
+  
+   filter:brightness(50%);
+}
+
+.App-photo-img.Lazy-image-item--blur{
+    filter: blur(7px) brightness(50%);
+}
+
+.App-photo-img--blur{
+  filter: blur(7px) brightness(50%);
+}
+
+.App-photo-img--hide {
+	opacity: 0;
+}
+
+.App-photo-img--show {
+	opacity: 1;
+}
+
 .App-photo-description {
   position: absolute;
   top:20px;
