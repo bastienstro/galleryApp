@@ -1,10 +1,8 @@
-import React from 'react'; 
+import React from 'react'
 import Modal from './Modal'
 import LazyImage from '../LazyImage/LazyImage'
-import '../../css/LightBox/LightBox.css';
+import '../../css/LightBox/LightBox.css'
  
- 
-
 class LightBox extends React.Component {
 	
   constructor(props) {
@@ -14,18 +12,15 @@ class LightBox extends React.Component {
 		  highResHeight : '100%',
 		  highResWidth : '100%',
 	  }
-  
   }
   
   setMaxResImage() {
-	  
-	let highResPhoto,highResWidth,highResHeight;
 	
-	const images = ["url_l", "url_c", "url_m"];
+	const images = ["url_l", "url_c", "url_m"]
 	
 	for(var i = 0; i < images.length; i++) {
 		if(this.props.photo.hasOwnProperty(images[i])) {
-			let type = images[i].split('_')[1];
+			let type = images[i].split('_')[1]
 			return { highResUrl    : this.props.photo["url_"+type],
 					 highResHeight : this.props.photo["height_"+type]+'px',
 					 highResWidth : this.props.photo["width_"+type]+'px',
@@ -36,7 +31,7 @@ class LightBox extends React.Component {
   	
   render() {
 	
-	const { isOpen,photo } = this.props;    
+	const { isOpen,photo } = this.props    
 	let highResImage = {}
 	if (isOpen)	
 		highResImage = this.setMaxResImage()
@@ -46,14 +41,13 @@ class LightBox extends React.Component {
       	<Modal isOpen={isOpen} onRequestClose={() => this.props.onRequestClose()} >
       	  {isOpen && 
       	 	<div className="LightBox">
-      			
-	      		<div className="LightBox-image" style={{height:`${highResImage.highResHeight}`,width:`${highResImage.highResWidth}` }}>
-	      			<LazyImage  className="LightBox-lazy-item" thumbsrc={photo.url_m} src={highResImage.highResUrl} height={photo.height_l} />
+      			<div className="LightBox-image" style={{height:`${highResImage.highResHeight}`,width:`${highResImage.highResWidth}` }}>
+	      			<LazyImage  className="LightBox-lazy-item" thumbsrc={photo.url_m} src={highResImage.highResUrl} height={photo.height_l} alt={photo.title} />
 		  		</div>
 		  		<div className="LightBox-description">
 		  			<h2 className="LightBox-description-text LightBox-description-text--right">{photo.title}</h2> 
 		  			<h2 className="LightBox-description-text LightBox-description-text--gray LightBox-description-text--left">{photo.ownername}</h2>
-		  			<h2 className="LightBox-description-text LightBox-description-text--gray LightBox-description-text--right">{(typeof photo.datetaken!= "undefined"?photo.datetaken.slice(0,10):"")}</h2>
+		  			<h2 className="LightBox-description-text LightBox-description-text--gray LightBox-description-text--right">{(typeof photo.datetaken!== "undefined"?photo.datetaken.slice(0,10):"")}</h2>
 		  			<h2 className="LightBox-description-text LightBox-description-text--left"> {photo.views} views</h2>
 		  		</div>
 		 	</div>
@@ -64,4 +58,4 @@ class LightBox extends React.Component {
   }
 }
 
-export default LightBox;
+export default LightBox

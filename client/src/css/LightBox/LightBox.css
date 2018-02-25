@@ -1,57 +1,51 @@
 .LightBox {
-	display: flex;
-    flex-flow: column nowrap;
-    height: 100%;
-    width: 100%;
-    max-width: 1200px;
-    align-content: flex-end;
-    justify-content:center;
-
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  align-content: flex-end;
+  justify-content:center;
+  align-items: center;
 }
 
 .LightBox-image {
-	flex:1 1 80%;
-	display: flex;
-	max-height: 80%;
-	width: 100%;
-	   align-items: flex-end;
+  flex:1 1 80%;
+  display: flex;
+  max-height: 80%;
+  width: 100%;
+  align-items: flex-end;
 }
 .LightBox-lazy-item {
-	object-fit:contain;
-	max-height: 100%;
-	max-width: 100%;
-	
-
+  object-fit:contain;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .LightBox-description {
-	
-	width: 100%;
-    align-items: flex-start;
-	color:#FFF;
-	padding-top: 5px;
-	
+  width: 100%;
+  align-items: flex-start;
+  color:#FFF;
+  padding-top: 5px;
 }
 
-
 .LightBox-description-text {
-	margin: 0;
-	width: calc(50% - 10px);
-	display: inline-block;
-	text-align: center;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	font-size: 20px;
-	line-height: 20px;
-	text-transform: uppercase;
-	font-weight: 300;
-	padding: 0px 5px;
+  margin: 0;
+  width: calc(50% - 10px);
+  display: inline-block;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 0px 5px;
 }
 
 .LightBox-description-text--gray{
-    color:#777;
+  color:#777;
 }
 
 .LightBox-description-text--left {

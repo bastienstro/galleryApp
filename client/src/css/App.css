@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300,400|Lobster);
+
 html {
   margin: 0;
   padding: 0;
@@ -21,7 +23,13 @@ body {
   color: white;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
 }
-
+.App-header-title {
+  color:#000;
+  font-family: 'Lobster';
+  font-size: 26px;
+  margin: 0;
+  line-height: 40px;
+}
 .wrapper {
   margin: 2em auto;
   max-width: 970px;
@@ -60,24 +68,11 @@ body {
 }
 
 .App-photo-img {
-  
-   filter:brightness(50%);
+  filter:brightness(50%);
 }
 
 .App-photo-img.Lazy-image-item--blur{
-    filter: blur(7px) brightness(50%);
-}
-
-.App-photo-img--blur{
   filter: blur(7px) brightness(50%);
-}
-
-.App-photo-img--hide {
-	opacity: 0;
-}
-
-.App-photo-img--show {
-	opacity: 1;
 }
 
 .App-photo-description {
@@ -121,19 +116,14 @@ body {
 .App-photo-caption {
   color:#000;
   font-size: 16px;	
-   text-overflow: ellipsis;
-white-space: nowrap;
-overflow: hidden;
-width:100%; 	
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width:100%; 	
 }
-
 
 @media only screen and (max-width: 991px) {
-.App-gallery{
+ .App-gallery{
 	padding: 20px;
-}
-}
-
-@media only screen and (min-width: 992px) {
-
+ }
 }

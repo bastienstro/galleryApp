@@ -1,12 +1,7 @@
-import React from 'react';
-import '../../css/LightBox/Modal.css'; 
+import React from 'react'
+import '../../css/LightBox/Modal.css'
 
 class Modal extends React.Component {
-	
-  componentDidMount() {
-
-  }
-  
   
   componentDidUpdate() {
 	  
@@ -21,7 +16,6 @@ class Modal extends React.Component {
   }
 	
   render() {
-	  
 		  
     return (
       <div ref={(overlay) => {this.overlay=overlay}} 
@@ -31,10 +25,9 @@ class Modal extends React.Component {
 	  		<div className={"Modal-container"}>
 	  			{this.props.children}
 	  		</div>		 
-	  	
 	  </div> 
     );
   }
 }
 
-export default Modal;
+export default Modal

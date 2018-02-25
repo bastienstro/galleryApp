@@ -1,8 +1,8 @@
 const express = require('express'),
-      config = require('./config'),
+      config = require('./parameters'),
       Flickr = require("flickrapi")
 
-flickrOptions = {
+const flickrOptions = {
       api_key: config.API_KEY,
       secret: config.API_SECRET
     };
@@ -15,30 +15,25 @@ Flickr.tokenOnly(flickrOptions, function(error, flickr) {
 	app.get('/photos/:page*?',(req,resp) => {
 		
 		const page = req.params.page || 1;
-
-		flickr.photos.getRecent({ page: page,
-								  per_page:10,
-								  extras: "owner_name,url_t,url_m,url_c,url_l,description,date_taken,views" 
-			
-			
-			
-		}, function(err,result) {
+		const params = { page: page,
+						 per_page:10,
+						 extras: "owner_name,url_t,url_m,url_c,url_l,description,date_taken,views" 
+						}
+		flickr.photos.getRecent(params, (err,result) => {
           if(err) { resp.send(err); }
           resp.send(result.photos)  
         });
 		
 	})
+	// we specify this port for dev
 	port = 3001
 	
 	app.listen(port, (err,result) => {
-		if (err) { console.error(err);process.exit(1);}
-		else console.log(`Listening on port ${port}`);
+		if (err) { 
+			console.error(err)
+			process.exit(1)
+		}
+		else console.log(`Listening on port ${port}`)
 	});
 	
 });
-
-// Initialize the app
-
-
-
-
