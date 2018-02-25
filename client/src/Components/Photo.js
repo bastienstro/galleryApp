@@ -13,7 +13,7 @@ class Photo extends React.Component {
 
   render() {
 	  
-	const { ownername,url_t,url_m,url_l,description,date_taken,views,title } = this.props;  
+	const { ownername,url_t,url_m,url_l,title } = this.props;  
 	  
     return (
       <div className="App-photo" onClick={() => this.props.onClick()} >

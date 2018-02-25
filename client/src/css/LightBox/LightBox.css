@@ -24,13 +24,38 @@
 }
 
 .LightBox-description {
-	flex:0 0 10%;
-   align-items: flex-start;
+	
+	width: 100%;
+    align-items: flex-start;
+	color:#FFF;
+	padding-top: 5px;
 	
 }
 
 
-.LightBox-description-title {
-	color:#FFF;
+.LightBox-description-text {
 	margin: 0;
+	width: calc(50% - 10px);
+	display: inline-block;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 20px;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-weight: 300;
+	padding: 0px 5px;
+}
+
+.LightBox-description-text--gray{
+    color:#777;
+}
+
+.LightBox-description-text--left {
+  text-align: left;
+}
+
+.LightBox-description-text--right {
+  text-align: right;
 }
