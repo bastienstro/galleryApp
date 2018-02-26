@@ -1,17 +1,31 @@
-const express = require('express'),
-      config = require('./parameters'),
-      Flickr = require("flickrapi")
+import express from "express"
+import path from 'path'
+import Flickr from 'flickrapi'
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import { API_KEY,API_SECRET } from './parameters'
+import App from './client/src/Components/App'
+import template from './views/index'
 
 const flickrOptions = {
-      api_key: config.API_KEY,
-      secret: config.API_SECRET
+      api_key: API_KEY,
+      secret: API_SECRET
     };
 
 Flickr.tokenOnly(flickrOptions, function(error, flickr) {
 	
-    var express = require("express"),
-        app = express()	
-	
+    const app = express()	
+        
+    app.use(express.static('build'));
+	/** App **/
+	app.get('/',(req,resp) => {
+		const appString = ReactDOMServer.renderToString(<App />);
+		resp.send(template({
+		body: appString,
+		title: 'Gallery App',
+        }));
+	})
+	/** API get photos route **/
 	app.get('/photos/:page*?',(req,resp) => {
 		
 		const page = req.params.page || 1;
@@ -25,8 +39,8 @@ Flickr.tokenOnly(flickrOptions, function(error, flickr) {
         });
 		
 	})
-	// we specify this port for dev
-	port = 3001
+	
+	let port = 3000
 	
 	app.listen(port, (err,result) => {
 		if (err) { 

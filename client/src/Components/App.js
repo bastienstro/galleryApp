@@ -71,8 +71,7 @@ class App extends React.Component {
 	  
 	const isLightBoxOpen = this.state.selectedPhoto.hasOwnProperty('id')  
 	  
-    return (
-      <div className="App">
+    return (<div className="App">
         <header className="App-header">
          	 <h1 className="App-header-title">Gallerist</h1>
         </header>
