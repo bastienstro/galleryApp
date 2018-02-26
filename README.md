@@ -24,6 +24,10 @@ So forgive me if they are not fully reusabled as the LightBox Component which is
 
 I choose to show a set of 10 images and ask for ten more every time you scroll to the bottom of the page cause I thought it was a better User Experience.
 
+# Server:
+
+We could use the Proxy functionality of Flickr API but I wanted to make my own route.So I basically create a route (photos/:page) which get recent Photos using the Flickr API and send it to the client without modifying the data.  
+
 # LazyImage Component:
 
 This component use two resolutions of the same picture. 
