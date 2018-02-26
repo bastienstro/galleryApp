@@ -15,7 +15,8 @@ class LightBox extends React.Component {
   }
   
   setMaxResImage() {
-	
+	/** all photos doesn't have every resolution available **/
+	/** So we search for the better one **/
 	const images = ["url_l", "url_c", "url_m"]
 	
 	for(var i = 0; i < images.length; i++) {

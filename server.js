@@ -11,13 +11,13 @@ const flickrOptions = {
       api_key: API_KEY,
       secret: API_SECRET
     };
-
+/** We access to the public API from flickr **/
 Flickr.tokenOnly(flickrOptions, function(error, flickr) {
 	
     const app = express()	
         
     app.use(express.static('build'));
-	/** App **/
+	/** App home route **/
 	app.get('/',(req,resp) => {
 		const appString = ReactDOMServer.renderToString(<App />);
 		resp.send(template({
@@ -26,6 +26,7 @@ Flickr.tokenOnly(flickrOptions, function(error, flickr) {
         }));
 	})
 	/** API get photos route **/
+	/** We doesn't transform the response given by Flickr **/
 	app.get('/photos/:page*?',(req,resp) => {
 		
 		const page = req.params.page || 1;

@@ -4,7 +4,7 @@ import '../../css/LightBox/Modal.css'
 class Modal extends React.Component {
   
   componentDidUpdate() {
-	  
+	  /** this is done to make smooth opening and closing modal **/
 	  if (this.props.isOpen) {
 		  this.overlay.style.display="flex"
 		  setTimeout(() => {this.overlay.style.opacity=1},500)

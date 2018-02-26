@@ -20,7 +20,6 @@ class App extends React.Component {
 	  this.scroll = {
 		  	triggered : false,
 		  	triggerDistance : 50
-		  
 	  }
 	 
 	  this.handleScroll = this.handleScroll.bind(this)
@@ -42,7 +41,10 @@ class App extends React.Component {
   }
   
   handleScroll(e) {
-	  
+	/* When we scroll to the bottom of the page */
+	/* It will call the API to fetch the next 10 photos (10 is specified server-side) */
+	/* and add it to our state	*/
+		  
 	this.infiniteScroll(() => {
 		let nextPage = this.state.page+1;
 		if (nextPage !== this.state.pages)
@@ -55,6 +57,7 @@ class App extends React.Component {
   }
   
   infiniteScroll(callback) {
+	/** We use a triggered boolean to just call our callback once when the condition is met */  
 	let _windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
     	_scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
 		
@@ -66,7 +69,6 @@ class App extends React.Component {
     	this.scroll.triggered = false
   }
   	
-	
   render() {
 	  
 	const isLightBoxOpen = this.state.selectedPhoto.hasOwnProperty('id')  
